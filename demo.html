@@ -8,12 +8,12 @@
 	<script>
 	var array = [3, 4, 1, 8, 2, 11, 15, 18, 20, 11, 211, 23, 11, 11, 1111, 2323];
 	/**
-	*@description 冒泡排序法
+	*@description 交换排序法
 	*@function
 	*@param array [array] 需要排序的数组
 	*@param desc [false|true],是否降序排列，为true时降序
 	*/
-	function bubble(array, desc){
+	function change(array, desc){
 		if(!(array instanceof Array)){
 			return [].push(array)
 		}
@@ -30,9 +30,33 @@
 				}
 			}
 		}
-		return array
+		return desc? array.reverse(): array
 	}
-	
+	/**
+	*@description 冒泡排序法
+	*@function
+	*@param array [array] 需要排序的数组
+	*@param desc [false|true],是否降序排列，为true时降序
+	*/
+	function bubble(array, desc){
+		if(!(array instanceof Array)){
+			return [].push(array)
+		}
+		if(array.length < 2){
+			return array;
+		}
+		var max = array.length;
+		for(var i = 0; i < max - 1; i++){
+			for(var j = 0; j < max - 1 - i; j++){
+				if(array[j] > array[j+1]){
+					var num = array[j+1];
+					array[j+1] = array[j];
+					array[j] = num;
+				}
+			}
+		}
+		return desc? array.reverse(): array
+	}
 	/**
 	*@description 快速排序法
 	*@function

@@ -10,8 +10,8 @@
 	/**
 	*@description 交换排序法
 	*@function
-	*@param array [array] 需要排序的数组
-	*@param desc [false|true],是否降序排列，为true时降序
+	*@param array {Array} 需要排序的数组
+	*@param desc {Boolean},是否降序排列，为true时降序
 	*/
 	function change(array, desc){
 		if(!(array instanceof Array)){
@@ -21,7 +21,7 @@
 			return array;
 		}
 		var max = array.length;
-		for(var i = 0; i < max; i++){
+		for(var i = 0; i < max - 1; i++){
 			for(var j = i + 1; j < max; j++){
 				if(array[i] < array[j]){
 					var num = array[j];
@@ -35,8 +35,8 @@
 	/**
 	*@description 冒泡排序法
 	*@function
-	*@param array [array] 需要排序的数组
-	*@param desc [false|true],是否降序排列，为true时降序
+	*@param array {Array} 需要排序的数组
+	*@param desc {Boolean},是否降序排列，为true时降序
 	*/
 	function bubble(array, desc){
 		if(!(array instanceof Array)){
@@ -60,8 +60,8 @@
 	/**
 	*@description 快速排序法
 	*@function
-	*@param array [array] 需要排序的数组
-	*@param desc [false|true],是否降序排列，为true时降序
+	*@param array {Array} 需要排序的数组
+	*@param desc {Boolean},是否降序排列，为true时降序
 	*/
 	function quicksort(array, desc){
 		if(array.length < 2){

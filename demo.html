@@ -88,6 +88,31 @@
 		rigthNew = quicksort(right);
 		return [].concat(leftNew, middle, rigthNew);
 	}
+
+	/**
+	*@description 插入排序法
+	*@function
+	*@param array {Array} 需要排序的数组
+	*@param desc {Boolean} 是否为降序排列
+	*/
+
+	function insert(arr){
+		var max = arr.length,
+			ary = arr,
+			i = 1,
+			j;
+		for( ; i < max; i++){
+			for( j = i; j > 0 && ary[j - 1] > ary[j]; j--){
+				var temp = ary[j - 1];
+				ary[j - 1] = ary[j];
+				ary[j] = temp;
+			}
+		}	
+		return ary;
+	}
+
+
+
 	</script>
 </body>
 </html>
